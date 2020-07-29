@@ -17,7 +17,7 @@ declare namespace VtecxApp {
 		content?: Content[],
 		link?: Link[],
 		contributor?: Contributor[],
-		foo?:Foo
+		user?:User
 	}
 	interface Content {
 		______text: string
@@ -30,7 +30,7 @@ declare namespace VtecxApp {
 		uri?: string,
 		email?: string
 	}
-	interface Foo {
-		bar?:string
+	interface User {
+		name?:string
 	}
 }

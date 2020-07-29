@@ -1,16 +1,31 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const App = () => {
     const [x, f] = useState(0)
 
-    const getdata = async () => {
+    const req: VtecxApp.Entry[] = [
+        {
+            user: {
+                name: 'baz',
+                email: 'baz@com'
+            },
+            link: [
+                {
+                    "___href": "/foo/2",
+                    "___rel": "self"
+                }
+            ]
+        }
+    ]
+
+    const putdata = async () => {
         try {
             axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
-            const res = await axios.get('/d/foo/1?e')
-            alert(`res=${res.data.title}`);
+            const res = await axios.put('/d/foo', req)
+            alert(`res= ${res.data.feed.title} `);
         } catch (e) {
             alert('error')
             console.log(e)
@@ -18,13 +33,17 @@ const App = () => {
     }
 
     useEffect(() => {
-        getdata()
+        putdata()
     })
+
     return (
         <div>
-            <button onClick={() => { f(x + 1) }}>{x} times</button>
+            <button onClick={() => { f(x + 1) }}>
+                {x} times
+      </button>
         </div>
     )
+
 }
 
 ReactDOM.render(<App />, document.getElementById('container'))

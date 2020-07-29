@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "0d6f7fce054181fcdabe";
+/******/ 	var hotCurrentHash = "9107f1fae6d35d8ba797";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -10767,16 +10767,19 @@ var axios_1 = __webpack_require__(/*! axios */ "axios");
 var App = function () {
     var _a = react_1.useState(0), x = _a[0], f = _a[1];
     var getdata = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var res, e_1;
+        var res, entry, e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
                     axios_1.default.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
-                    return [4 /*yield*/, axios_1.default.get('/d/foo/1?e')];
+                    return [4 /*yield*/, axios_1.default.get('/d/foo/2?e')];
                 case 1:
                     res = _a.sent();
-                    alert("res=" + res.data.title);
+                    entry = res.data;
+                    if (entry.user && entry.user.name) {
+                        alert("res=" + res.data.user.name);
+                    }
                     return [3 /*break*/, 3];
                 case 2:
                     e_1 = _a.sent();

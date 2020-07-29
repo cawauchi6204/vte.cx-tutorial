@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<feed>
 <entry>
-<content type="text/html">
-</content>
+  <content type="text/html">user
+ name
+ email</content>
   <contributor>
     <uri>urn:vte.cx:acl:/_group/$admin,CRUD</uri>
   </contributor>
@@ -12,3 +14,19 @@
   <rights>
 </rights>
 </entry>
+<entry>
+  <link href="/_settings/template_property" rel="self"/>
+</entry>
+  <entry>
+    <link href="/_settings/template_property/user" rel="self"/>
+    <title>ユーザ</title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.email" rel="self"/>
+    <title>メールアドレス</title>
+  </entry>
+  <entry>
+    <link href="/_settings/template_property/user.name" rel="self"/>
+    <title>名前</title>
+  </entry>
+</feed>
